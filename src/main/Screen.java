@@ -2,25 +2,28 @@ package main;
 
 import javax.swing.JPanel;
 
+import Entity.Ball;
 import Entity.Player;
 
 import java.awt.*;
 
 public class Screen extends JPanel implements Runnable{
 
-
+    public int width = 1366;
+    public int height = 768;
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
 
-    Player player = new Player(this, keyH, 40, 40);
-    Player player2 = new Player(this, keyH, 1580, 820);
+    Player player = new Player(this, keyH, 40, height/2-80, "left");
+    Player player2 = new Player(this, keyH, width-60, height/2-80, "right");
+    Ball ball = new Ball(1366/2+8, 768/2+8, 1);
 //    player.setDefaultValues();
 
     //FPS
     int FPS = 60;
 
     public Screen(){
-        this.setPreferredSize(new Dimension(1600, 900));
+        this.setPreferredSize(new Dimension(width, height));
         this.setBackground(Color.black);
         this.setDoubleBuffered(true);
         this.addKeyListener(keyH);
@@ -58,6 +61,7 @@ public class Screen extends JPanel implements Runnable{
     public void update(){
         player.update();
         player2.update();
+        ball.update();
     }
 
     public void paintComponent(Graphics g){
@@ -66,6 +70,8 @@ public class Screen extends JPanel implements Runnable{
         g2.setColor(Color.white);
         g2.fillRect(player.getX(), player.getY(), 20, 80);
         g2.fillRect(player2.getX(), player2.getY(), 20, 80);
+        g2.fillOval(ball.getX(), ball.getY(), 16, 16);
         g2.dispose();
     }
+
 }
