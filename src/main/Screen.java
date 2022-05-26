@@ -9,14 +9,14 @@ import java.awt.*;
 
 public class Screen extends JPanel implements Runnable{
 
-    public int width = 1366;
-    public int height = 768;
+    public static int width = 1366;
+    public static int height = 768;
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
 
     Player player = new Player(this, keyH, 40, height/2-80, "left");
     Player player2 = new Player(this, keyH, width-60, height/2-80, "right");
-    Ball ball = new Ball(1366/2+8, 768/2+8, 2);
+    Ball ball = new Ball(width/2+8, height/2+8, 4);
 
     //FPS
     int FPS = 60;
@@ -60,6 +60,9 @@ public class Screen extends JPanel implements Runnable{
     public void update(){
         player.update();
         player2.update();
+
+        if ( player.getY()<ball.getY() && player.getY()+80>ball.getY() )
+        ball.inverse();
         ball.update();
     }
 
