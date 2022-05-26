@@ -16,8 +16,7 @@ public class Screen extends JPanel implements Runnable{
 
     Player player = new Player(this, keyH, 40, height/2-80, "left");
     Player player2 = new Player(this, keyH, width-60, height/2-80, "right");
-    Ball ball = new Ball(1366/2+8, 768/2+8, 1);
-//    player.setDefaultValues();
+    Ball ball = new Ball(1366/2+8, 768/2+8, 2);
 
     //FPS
     int FPS = 60;
