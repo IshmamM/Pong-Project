@@ -14,9 +14,9 @@ public class Screen extends JPanel implements Runnable{
     KeyHandler keyH = new KeyHandler();
     Thread gameThread;
 
-    Player player = new Player(this, keyH, 40, height/2-80, "left");
-    Player player2 = new Player(this, keyH, width-60, height/2-80, "right");
-    Ball ball = new Ball(width/2+8, height/2+8, 4);
+    Player player = new Player(this, keyH, 40, height/2-40, "left");
+    Player player2 = new Player(this, keyH, width-60, height/2-40, "right");
+    Ball ball = new Ball(width/2+8, height/2+8, (float) 4.05);
 
     //FPS
     int FPS = 60;
@@ -61,7 +61,8 @@ public class Screen extends JPanel implements Runnable{
         player.update();
         player2.update();
 
-        if ( player.getY()<ball.getY() && player.getY()+80>ball.getY() )
+        if ( ((ball.getX()>=56 && ball.getX()<=60) && (ball.getY()>=player.getY() && ball.getY()<=player.getY()+80) ) ||
+           ( (ball.getX()<=width-64 && ball.getX()>=width-68) && (ball.getY()>=player2.getY() && ball.getY()<=player2.getY()+80)) )
         ball.inverse();
         ball.update();
     }
