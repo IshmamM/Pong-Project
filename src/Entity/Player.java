@@ -23,7 +23,6 @@ public class Player{
     public void update(){
         if(speed <= 16)
         speed*= 1.0004;
-        System.out.println(speed);
 
         if (side == "left"){
             if (keyH.upPressed) {
