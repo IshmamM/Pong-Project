@@ -24,8 +24,8 @@ public class Ball {
             yv = -yv;
         y += yv;
 
-        xv *= 1.00005;
-        yv *= 1.00005;
+        xv *= 1.0001;
+        yv *= 1.0001;
     }
 
     public int getX() {

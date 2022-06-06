@@ -25,7 +25,7 @@ public class Player{
                 if (y!=0)
                 y -= speed;
             } else if (keyH.downPressed){
-                if (y<sc.height-80)
+                if (y<Screen.height-80)
                 y += speed;
             }
         }
@@ -34,7 +34,7 @@ public class Player{
                 if (y!=0)
                 y -= speed;
             } else if (keyH.downPressed1){
-                if (y<sc.height-80)
+                if (y<Screen.height-80)
                 y += speed;
             }
         }
