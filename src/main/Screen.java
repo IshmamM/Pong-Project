@@ -66,8 +66,8 @@ public class Screen extends JPanel implements Runnable {
         player.update();
         player2.update();
 
-        if ( ((ball.getY() >= player.getY() - 4 && ball.getY() <= player.getY() + 80) && (ball.getX() >= 50 && ball.getX() <= 58)) ||
-             ((ball.getY() >= player2.getY() - 4 && ball.getY() <= player2.getY() + 80) && (ball.getX() >= width - 76 && ball.getX() <= width - 50 ))){
+        if ( ((ball.getY() >= player.getY() && ball.getY() <= player.getY() + 80) && (ball.getX() <= player.getX()+20)) ||
+             ((ball.getY() >= player2.getY() && ball.getY() <= player2.getY() + 80) && (ball.getX() >= player2.getX()-20))){
             ball.inverse();
             ball.update();
             }
@@ -75,8 +75,11 @@ public class Screen extends JPanel implements Runnable {
 
         scoreR += (ball.getX() <= 0) ? 1 : 0;
         scoreL += (ball.getX() >= width) ? 1 : 0;
-        if (ball.getX() <= 0 || ball.getX() >= width)
+        if (ball.getX() <= 0 || ball.getX() >= width){
             ball.setXY(width / 2 + 8, height / 2 + 8, (float) 4.05);
+            player.setSpeed(4);
+            player2.setSpeed(4);
+        }
     }
 
     public void paintComponent(Graphics g) {

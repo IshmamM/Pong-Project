@@ -23,9 +23,9 @@ public class Pong {
 
     public static void end(int one, int two) {
         if (one >= 3)
-            JOptionPane.showMessageDialog(null, "PLAYER 1 DOUBLEU", "GAME OVER", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "EZ DUB PLAYER 1", "GAME OVER", JOptionPane.INFORMATION_MESSAGE);
         if (two >= 3)
-            JOptionPane.showMessageDialog(null, "PLAYER 2 DOUBLEU", "GAME OVER", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "EZ DUB PLAYER 2", "GAME OVER", JOptionPane.INFORMATION_MESSAGE);
     }
 
 }

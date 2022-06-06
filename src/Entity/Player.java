@@ -5,7 +5,8 @@ import main.Screen;
 
 public class Player{
 
-    private int x, y, speed;
+    private int x, y;
+    private float speed;
     private String side; 
     Screen sc;
     KeyHandler keyH;
@@ -20,6 +21,10 @@ public class Player{
     }
 
     public void update(){
+        if(speed <= 16)
+        speed*= 1.0004;
+        System.out.println(speed);
+
         if (side == "left"){
             if (keyH.upPressed) {
                 if (y!=0)
@@ -45,6 +50,9 @@ public class Player{
     }
     public int getY(){
         return y;
+    }
+    public void setSpeed(float speed){
+        this.speed = speed;
     }
 
 }

@@ -24,8 +24,10 @@ public class Ball {
             yv = -yv;
         y += yv;
 
-        xv *= 1.0001;
-        yv *= 1.0001;
+        if (xv <= 30 && xv>= -30){
+            xv *= 1.0005;
+            yv *= 1.0005;
+        }
     }
 
     public int getX() {
