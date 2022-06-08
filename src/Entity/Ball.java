@@ -1,6 +1,6 @@
 package Entity;
 
-import main.Screen;
+import Main.Screen;
 
 public class Ball {
     private int x, y;

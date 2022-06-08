@@ -1,7 +1,7 @@
 package Entity;
 
-import main.KeyHandler;
-import main.Screen;
+import Main.KeyHandler;
+import Main.Screen;
 
 public class Player{
 
