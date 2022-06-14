@@ -66,8 +66,8 @@ public class Screen extends JPanel implements Runnable {
         player.update();
         player2.update();
 
-        if ( ((ball.getY() >= player.getY() && ball.getY() <= player.getY() + 80) && (ball.getX() <= player.getX()+20)) ||
-             ((ball.getY() >= player2.getY() && ball.getY() <= player2.getY() + 80) && (ball.getX() >= player2.getX()-20))){
+        if ( ((ball.getY() >= player.getY() && ball.getY() <= player.getY() + 80) && ((ball.getX() <= player.getX()+20) && (ball.getX() >= player.getX())) ||
+             ((ball.getY() >= player2.getY() && ball.getY() <= player2.getY() + 80) && (ball.getX() >= player2.getX()-20))) ) {
             ball.inverse();
             ball.update();
             }

@@ -30,6 +30,11 @@ public class Ball {
         }
     }
 
+
+    public void inverse() {
+        xv = -xv;
+    }
+
     public int getX() {
         return x;
     }
@@ -37,11 +42,7 @@ public class Ball {
     public int getY() {
         return y;
     }
-
-    public void inverse() {
-        xv = -xv;
-    }
-
+       
     public void setXY(int x, int y, float z) {
         this.x = x;
         this.y = y;
